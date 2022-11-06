@@ -1,9 +1,18 @@
-const cracoModuleFederation = require('craco-module-federation');
+const cracoModuleFederation = require("craco-module-federation");
 
 module.exports = {
-    plugins: [{
-        plugin: cracoModuleFederation,
-        options: { useNamedChunkIds:true } //THIS LINE IS OPTIONAL
-      },
-    ]
-}
+  devServer: {
+    client: {
+      overlay: false,
+    },
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+  },
+  plugins: [
+    {
+      plugin: cracoModuleFederation,
+      options: { useNamedChunkIds: true }, //THIS LINE IS OPTIONAL
+    },
+  ],
+};

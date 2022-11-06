@@ -6,18 +6,18 @@ module.exports = {
     "./App": "./src/App",
   },
   remotes: {
-    button: "button@http://localhost:3001/remoteEntry.js",
+    CustomButton: "CustomButton@http://localhost:3001/remoteEntry.js",
   },
   filename: "remoteEntry.js",
-  shared: {
-    ...deps,
-    react: {
-      singleton: true,
-      requiredVersion: deps["react"],
-    },
-    "react-dom": {
-      singleton: true,
-      requiredVersion: deps["react-dom"],
-    },
-  },
+  // shared: {
+  //   ...deps,
+  //   react: {
+  //     singleton: true,
+  //     requiredVersion: deps["react"],
+  //   },
+  //   "react-dom": {
+  //     singleton: true,
+  //     requiredVersion: deps["react-dom"],
+  //   },
+  // },
 };
