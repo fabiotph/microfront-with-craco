@@ -1,4 +1,4 @@
-const deps = require("./package.json").dependencies;
+const { dependencies } = require("./package.json");
 
 module.exports = {
   name: "CustomButton",
@@ -6,15 +6,15 @@ module.exports = {
     "./Button": "./src/App",
   },
   filename: "remoteEntry.js",
-  // shared: {
-  //   ...deps,
-  //   react: {
-  //     singleton: true,
-  //     requiredVersion: deps["react"],
-  //   },
-  //   "react-dom": {
-  //     singleton: true,
-  //     requiredVersion: deps["react-dom"],
-  //   },
-  // },
+  shared: {
+    ...dependencies,
+    react: {
+      singleton: true,
+      requiredVersion: dependencies.react,
+    },
+    'react-dom': {
+      singleton: true,
+      requiredVersion: dependencies['react-dom'],
+    },
+  },
 };
