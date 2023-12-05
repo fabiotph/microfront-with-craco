@@ -1,5 +1,7 @@
 import React from 'react';
-const CustomButton: any = React.lazy(() => import('CustomButton/Button'));
+import "./App.css";
+
+const CustomButton = React.lazy(() => import('CustomButton/Button'));
 
 function App() {
 
@@ -8,7 +10,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container">
       <h1>Container Frontend</h1>
       <CustomButton backgroundColor={'yellow'} callback={onClick} />
     </div>
